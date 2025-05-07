@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wanderlust Odyssey Hub - Explore breathtaking travel destinations with a futuristic travel blog.">
+  <meta name="theme-color" content="#1a202c">
+  <title>Wanderlust Odyssey Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="https://i.pinimg.com/736x/79/7a/25/797a258c020baa1cbbe64910bbb07361.jpg">
+</head>
+<body class="bg-gray-900 text-white" data-theme="dark">
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" class="fixed top-4 right-4 p-2 rounded bg-gray-800 z-20" aria-label="Toggle theme">
+    <svg width="24" height="24" fill="currentColor" id="theme-icon" viewBox="0 0 24 24">
+      <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z"/>
+    </svg>
+  </button>
+
+  <!-- Header with Navigation -->
+  <header class="fixed w-full bg-opacity-80 backdrop-blur-md z-10">
+    <nav class="container mx-auto flex justify-between items-center py-4">
+      <h1 class="text-2xl font-bold">Wanderlust Odyssey</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#home" class="nav-link hover:text-neon">Home</a></li>
+        <li><a href="#destinations" class="nav-link hover:text-neon">Destinations</a></li>
+        <li><a href="#blog" class="nav-link hover:text-neon">Blog</a></li>
+        <li><a href="#gallery" class="nav-link hover:text-neon">Gallery</a></li>
+        <li><a href="#contact" class="nav-link hover:text-neon">Contact</a></li>
+      </ul>
+      <div class="search-bar">
+        <input type="text" id="search" placeholder="Search destinations..." class="p-2 rounded bg-gray-800 text-white" aria-label="Search destinations">
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="h-screen flex items-center justify-center bg-hero bg-cover">
+      <div class="text-center">
+        <h2 class="text-5xl font-bold mb-4 animate-fade-in">Explore the Universe of Travel</h2>
+        <p class="text-lg mb-6 animate-fade-in" style="animation-delay: 0.2s;">Discover breathtaking destinations with Wanderlust Odyssey Hub.</p>
+        <a href="#destinations" class="btn-neon animate-fade-in" style="animation-delay: 0.4s;">Start Exploring</a>
+      </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="py-16 bg-gray-800">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Discover Destinations</h2>
+        <div id="globe" class="h-96 bg-gray-900 rounded-lg"></div>
+        <div id="destination-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+          <!-- Dynamic destinations loaded via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-16">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Travel Stories</h2>
+        <div id="blog-posts" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Dynamic blog posts loaded via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-800">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Travel Gallery</h2>
+        <div class="swiper-container" id="gallery-slider">
+          <div class="swiper-wrapper">
+            <!-- Dynamic gallery images loaded via JS -->
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
+        <form id="contact-form" class="max-w-lg mx-auto">
+          <div class="mb-4">
+            <label for="name" class="block text-sm mb-2">Name</label>
+            <input type="text" id="name" class="w-full p-2 rounded bg-gray-800 text-white" required aria-describedby="name-error">
+            <span id="name-error" class="text-red-500 text-sm hidden">Name is required</span>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-sm mb-2">Email</label>
+            <input type="email" id="email" class="w-full p-2 rounded bg-gray-800 text-white" required aria-describedby="email-error">
+            <span id="email-error" class="text-red-500 text-sm hidden">Invalid email format</span>
+          </div>
+          <div class="mb-4">
+            <label for="message" class="block text-sm mb-2">Message</label>
+            <textarea id="message" class="w-full p-2 rounded bg-gray-800 text-white" rows="5" required aria-describedby="message-error"></textarea>
+            <span id="message-error" class="text-red-500 text-sm hidden">Message is required</span>
+          </div>
+          <button type="submit" class="btn-neon w-full">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-8">
+    <div class="container mx-auto text-center">
+      <div class="social-links mb-4 flex justify-center space-x-4">
+        <a href="#" class="hover:text-neon" aria-label="Twitter"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.5 6.1c-.8.3-1.6.6-2.5.7 1-.6 1.7-1.5 2-2.6-.9.5-1.9.9-2.9 1.1-.8-.9-2-1.4-3.3-1.4-2.5 0-4.5 2-4.5 4.5 0 .4 0 .7.1 1-3.7-.2-7-2-9.2-4.8-.4.7-.6 1.5-.6 2.4 0 1.6.8 3 2.1 3.8-.8 0-1.5-.2-2.1-.5v.1c0 2.2 1.6 4.1 3.7 4.5-.4.1-.8.2-1.2.2-.3 0-.6 0-.9-.1.6 1.9 2.3 3.3 4.4 3.3-1.6 1.3-3.6 2-5.8 2-.4 0-.8 0-1.2-.1 2.1 1.4 4.6 2.2 7.3 2.2 8.7 0 13.5-7.2 13.5-13.5 0-.2 0-.4 0-.6.9-.6 1.7-1.4 2.3-2.3-.8.4-1.7.6-2.6.7z"/></svg></a>
+        <a href="#" class="hover:text-neon" aria-label="Instagram"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.326-2.633 1.301-3.608.975-.975 2.242-1.24 3.608-1.301 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.36.062-2.677.333-3.892 1.548-1.215 1.215-1.486 2.532-1.548 3.892-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.062 1.36.333 2.677 1.548 3.892 1.215 1.215 2.532 1.486 3.892 1.548 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.36-.062 2.677-.333 3.892-1.548 1.215-1.215 1.486-2.532 1.548-3.892.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.062-1.36-.333-2.677-1.548-3.892-1.215-1.215-2.532-1.486-3.892-1.548-1.28-.058-1.688-.072-4.947-.072zm0 5.838c-3.313 0-6 2.687-6 6s2.687 6 6 6 6-2.687 6-6-2.687-6-6-6zm0 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
+      </div>
+      <p>© <span id="year"></span> Wanderlust Odyssey Hub. All rights reserved.</p>
+      <div class="links mt-2">
+        <a href="#privacy" class="hover:text-neon">Privacy Policy</a> | <a href="#terms" class="hover:text-neon">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-4 right-4 p-4 rounded bg-neon text-bg-dark hidden"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/globe.gl@2.27.0/dist/globe.gl.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
