@@ -119,7 +119,7 @@ const destinations = [
   
   // Fetch Weather from OpenWeatherMap
   async function fetchWeather(city) {
-    const apiKey = '1c130d2b3c2cbb25dcea384ed212f5a2'; // Replace with your API key
+    const apiKey = 'Repalce with your weather api key'; // Replace with your API key
     try {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);
       if (!response.ok) throw new Error('Weather data not available');
